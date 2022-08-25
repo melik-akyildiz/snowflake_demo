@@ -36,7 +36,7 @@ select
     -- so we back out the extended price per item
     (line_item.extended_price/nullif(line_item.quantity, 0)){{ money() }} as base_price,
     line_item.discount_percentage,
-    (orders.base_price * (1 - line_item.discount_percentage)){{ money() }} as orders.discounted_price,
+    (line_item.base_price * (1 - line_item.discount_percentage)){{ money() }} as discounted_price,
 
     line_item.extended_price as gross_item_sales_amount,
     (line_item.extended_price * (1 - line_item.discount_percentage)){{ money() }} as discounted_item_sales_amount,
