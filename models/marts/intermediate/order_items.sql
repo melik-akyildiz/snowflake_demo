@@ -34,9 +34,9 @@ select
 
     -- extended_price is actually the line item total,
     -- so we back out the extended price per item
-    (line_item.extended_price/nullif(line_item.quantity, 0)){{ money() }} as base_price,
+    (line_item.extended_price/nullif(line_item.quantity, 0)){{ money() }} as base_price_ref,
     line_item.discount_percentage,
-    (base_price * (1 - line_item.discount_percentage)){{ money() }} as discounted_price,
+    (base_price_ref * (1 - line_item.discount_percentage)){{ money() }} as discounted_price,
 
     line_item.extended_price as gross_item_sales_amount,
     (line_item.extended_price * (1 - line_item.discount_percentage)){{ money() }} as discounted_item_sales_amount,
