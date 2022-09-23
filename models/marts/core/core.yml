@@ -194,8 +194,7 @@ metrics:
     time_grains: [ day, week, month ]
 
     dimensions:
-      - plan
-      - country
+      - phone_number
 
     filters:
       - field: is_paying
