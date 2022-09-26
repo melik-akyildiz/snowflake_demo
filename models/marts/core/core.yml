@@ -72,10 +72,7 @@ models:
         description: '{{ doc("phone_number") }}'
       - name: account_balance
         description: '{{ doc("account_balance") }}'
-      - name: signup_date
-        description: date of the signup
-      - name: is_paying
-        description: status
+
 
   - name: fct_order_items
     description: order items fact table
@@ -202,17 +199,12 @@ metrics:
       - region
 
     filters:
-      - field: is_paying
-        operator: 'is'
-        value: 'true'
       - field: account_balance
         operator: '>='
         value: '100'
       - field: nation
         operator: '!='
         value: 'Somali'
-      - field: signup_date
-        operator: '>='
-        value: "'2020-01-01'"
+
 
 
