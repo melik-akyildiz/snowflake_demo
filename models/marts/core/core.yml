@@ -183,28 +183,30 @@ metrics:
     dimensions: 
       - priority_code
 
-  - name: new_suppliers
-    label: New Suppliers
-    model: ref('dim_suppliers')
+  - name: new_orders
+    label: New Orders
+    model: ref('fct_order_items')
     description: "The number of paid customers using the product"
 
     type: count
-    sql: supplier_key # superfluous here, but shown as an example
+    sql: order_item_key # superfluous here, but shown as an example
 
-    timestamp: signup_date
+    timestamp: order_date
     time_grains: [ day, week, month ]
 
     dimensions:
-      - phone_number
-      - region
+      - quantity
+      - supplier_key
 
     filters:
-      - field: account_balance
+      - field: return_flag
+        operator: 'is'
+        value: 'true'
+      - field: quantity
+        operator: '>'
+        value: '5'
+      - field: ship_date
         operator: '>='
-        value: '100'
-      - field: nation
-        operator: '!='
-        value: 'Somali'
-
+        value: "'2020-01-01'"
 
 
