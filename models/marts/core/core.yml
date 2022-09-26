@@ -195,6 +195,7 @@ metrics:
 
     dimensions:
       - phone_number
+      - account_balance
 
     filters:
       - field: is_paying
