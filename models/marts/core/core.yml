@@ -72,7 +72,11 @@ models:
         description: '{{ doc("phone_number") }}'
       - name: account_balance
         description: '{{ doc("account_balance") }}'
- 
+      - name: signup_date
+        description: date of the signup
+      - name: is_paying
+        description: status
+
   - name: fct_order_items
     description: order items fact table
     columns:
@@ -182,31 +186,31 @@ metrics:
     dimensions: 
       - priority_code
 
-  - name: new_customers
-    label: New Customers
-    model: ref('dim_customers')
+  - name: new_suppliers
+    label: New Suppliers
+    model: ref('dim_suppliers')
     description: "The number of paid customers using the product"
 
     type: count
-    sql: user_id # superfluous here, but shown as an example
+    sql: supplier_key # superfluous here, but shown as an example
 
     timestamp: signup_date
     time_grains: [ day, week, month ]
 
     dimensions:
       - phone_number
-      - account_balance
+      - region
 
     filters:
       - field: is_paying
         operator: 'is'
         value: 'true'
-      - field: lifetime_value
+      - field: account_balance
         operator: '>='
         value: '100'
-      - field: company_name
+      - field: nation
         operator: '!='
-        value: "'Acme, Inc'"
+        value: 'Somali'
       - field: signup_date
         operator: '>='
         value: "'2020-01-01'"
