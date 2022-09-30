@@ -27,10 +27,11 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
 
 on-run-start:
-  - "alter warehouse transforming set warehouse_size=small;"
-  - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
+  - "alter warehouse"
 
 on-run-end:
+  - "alter warehouse"
+
 
 vars:
   start_date: '1999-01-01'
