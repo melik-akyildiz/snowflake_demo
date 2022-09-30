@@ -27,10 +27,9 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
 
 on-run-start:
-  - "alter warehouse"
+  - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
 
 on-run-end:
-  - "alter warehouse"
 
 
 vars:
@@ -44,7 +43,7 @@ vars:
 
 models:
   +grants:
-    select: ['transformer']
+    select: ['PUBLIC']
 
   tpch:
     staging:
