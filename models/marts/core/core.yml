@@ -130,7 +130,7 @@ models:
         description: '{{ doc("item_tax_amount") }}'
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
-  
+
   - name: fct_orders
     description: orders fact table
     columns:
@@ -172,15 +172,15 @@ metrics:
   - name: revenue
     label: Revenue
     model: ref('fct_orders')
-    description: "Total revenue from orders in the specified time period"
-    
+    description: "Total revenue from orders in the specified time period."
+
     type: sum
-    sql: net_item_sales_amount
+      sql: net_item_sales_amount
 
     timestamp: order_date
     time_grains: [day, week, month, quarter, year]
 
-    dimensions: 
+    dimensions:
       - priority_code
 
   - name: new_orders
@@ -208,5 +208,3 @@ metrics:
       - field: ship_date
         operator: '>='
         value: "'2020-01-01'"
-
-
