@@ -175,8 +175,8 @@ metrics:
     description: "Total revenue from orders in the specified time period"
 
     type: sum
-      sql: net_item_sales_amount
-      
+    sql: net_item_sales_amount
+
     timestamp: order_date
     time_grains: [day, week, month, quarter, year]
 
