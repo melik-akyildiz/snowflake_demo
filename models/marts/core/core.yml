@@ -186,7 +186,7 @@ metrics:
   - name: new_orders
     label: New Orders
     model: ref('fct_order_items')
-    description: "The number of paid customers using the product"
+    description: "The number of paid customers using the product" 
 
     type: count
     sql: order_item_key # superfluous here, but shown as an example
