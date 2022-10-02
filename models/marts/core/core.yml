@@ -172,7 +172,7 @@ metrics:
   - name: revenue
     label: Revenue
     model: ref('fct_orders')
-    description: "Total revenue from orders in the specified time period."
+    description: "Total revenue from orders in the specified time period"
 
     type: sum
       sql: net_item_sales_amount
