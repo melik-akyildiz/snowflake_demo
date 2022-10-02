@@ -207,4 +207,4 @@ metrics:
         value: '5'
       - field: ship_date
         operator: '>='
-        value: "'2020-01-01'" 
+        value: "'2020-01-01'"
