@@ -176,7 +176,7 @@ metrics:
 
     type: sum
       sql: net_item_sales_amount
-
+      
     timestamp: order_date
     time_grains: [day, week, month, quarter, year]
 
@@ -192,7 +192,7 @@ metrics:
     sql: order_item_key # superfluous here, but shown as an example
 
     timestamp: order_date
-    time_grains: [ day, week, month ] 
+    time_grains: [ day, week, month ]
 
     dimensions:
       - quantity
