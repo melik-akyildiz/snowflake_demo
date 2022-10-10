@@ -4,12 +4,14 @@ models:
   - name: dim_customers
     meta:
       contains_pii: true
-      in_stock: false
+      owner: "@alice"
+      model_maturity: in dev
     description: Customer dimensions table
     columns:
       - name: customer_key
         meta:
           contains_pii: true
+          owner: "@alice"
         description: Primary key on the customers table
         tests:
           - unique
