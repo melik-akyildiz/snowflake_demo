@@ -17,6 +17,8 @@ models:
           - unique
           - not_null
       - name: region
+        meta:
+          contains_pii: false
         description: region name
         tests:
           - accepted_values:
