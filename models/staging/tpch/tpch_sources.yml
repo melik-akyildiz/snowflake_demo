@@ -8,6 +8,8 @@ sources:
     schema: TPCH_SF1
     tables:
       - name: orders
+        meta:
+          contains_pii: true
         description: main order tracking table
         freshness: # make this a warning as this is static data
           warn_after: {count: 6, period: hour}

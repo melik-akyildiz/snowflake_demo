@@ -5,6 +5,8 @@ models:
     description: demo to show incremental model
     columns:
       - name: customer_key
+        meta:
+          contains_pii: true
         tests:
           - unique
           - not_null

@@ -5,6 +5,8 @@ models:
     description: staging layer for customers data
     columns:
       - name: customer_key
+        meta:
+          contains_pii: true
         description: primary key of the model
         tests:
           - unique

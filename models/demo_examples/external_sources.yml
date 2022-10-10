@@ -38,6 +38,8 @@ sources:
 
     tables:
       - name: trading_data
+        meta:
+          contains_pii: true
         description: >
           The Deutsche Börse Public Data Set consists of trade data aggregated to one minute
           intervals from the Eurex and Xetra trading systems. It provides the initial price,
@@ -56,6 +58,8 @@ sources:
 
         columns:
           - name: ISIN
+            meta:
+              contains_pii: true
             data_type: TEXT
             description: "ISIN of the security"
           - name: MarketSegment
