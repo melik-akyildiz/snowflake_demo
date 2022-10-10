@@ -2,6 +2,8 @@ version: 2
 
 models:
   - name: dim_customers
+    meta:
+      contains_pii: true
     description: Customer dimensions table
     columns:
       - name: customer_key
