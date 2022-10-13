@@ -2,6 +2,9 @@ version: 2
 
 models:
   - name: dim_customers
+    tests:
+      - unique
+      - not_null
     meta:
       contains_pii: true
       owner: "@alice"
