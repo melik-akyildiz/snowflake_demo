@@ -7,8 +7,6 @@ models:
       - not_null
     meta:
       contains_pii: true
-      owner: "@alice"
-      model_maturity: in dev
     description: Customer dimensions table
     columns:
       - name: customer_key
