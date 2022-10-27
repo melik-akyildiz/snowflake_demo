@@ -189,7 +189,7 @@ models:
 
     # Test the results of my Python transformation
     columns:
-        - name: id
+        - name: customer_key
           # Standard validation for 'grain' of Python results
           tests:
             - unique

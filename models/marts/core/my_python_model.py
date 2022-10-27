@@ -1,24 +1,9 @@
-import holidays
-
-def is_holiday(date_col):
-    # Chez Jaffle
-    french_holidays = holidays.France()
-    is_holiday = (date_col in french_holidays)
-    return is_holiday
+import ...
 
 def model(dbt, session):
-    dbt.config(
-        materialized = "table",
-        packages = ["holidays"]
-    )
 
-    orders_df = dbt.ref("stg_orders")
+    my_sql_model_df = dbt.ref("dim_customers")
 
-    df = orders_df.to_pandas()
+    final_df = my_sql_model_df  # stuff you can't write in SQL!
 
-    # apply our function
-    # (columns need to be in uppercase on Snowpark)
-    df["IS_HOLIDAY"] = df["ORDER_DATE"].apply(is_holiday)
-
-    # return final dataset (Pandas DataFrame)
-    return df
+    return final_df
