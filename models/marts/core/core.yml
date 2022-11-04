@@ -1,6 +1,12 @@
 version: 2
 
 models:
+  - name: transactions
+    columns:
+      - name: parsed_transaction_time
+        tests:
+          - not_null
+
   - name: dim_customers
     tests:
       - unique
@@ -179,13 +185,6 @@ models:
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
 
-  - name: transactions
-    description: Python Test
-    columns:
-      - name: parsed_transaction_time
-        description: No Column description Python Test
-        tests:
-          - not_null
 
   - name: my_python_model
     # Document within the same codebase
