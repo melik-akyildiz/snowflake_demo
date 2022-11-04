@@ -52,6 +52,8 @@ models:
     marts:
       core:
         materialized: table
+        python_adapter:
+          type: fal
 
   snowflake_spend:
     enabled: true
