@@ -1,5 +1,3 @@
-import ...
-
 def model(dbt, session):
 
     my_sql_model_df = dbt.ref("dim_customers")
