@@ -59,3 +59,9 @@ models:
   snowflake_spend:
     enabled: true
 
+seeds:
+  tpch:
+    snowflake_contract_rates:
+      +column_types:
+        effective_date: DATE
+        rate: NUMBER
