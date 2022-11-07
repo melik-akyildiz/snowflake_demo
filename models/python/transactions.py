@@ -9,7 +9,7 @@ def try_dateutil_parse(x):
 
 
 def model(dbt, session):
-    df = dbt.ref("snowflake_contract_rates")
+    df = dbt.ref("tpch.snowflake_contract_rates")
 
     df['parsed_transaction_time'] = df['effective_date'].apply(try_dateutil_parse)
 
