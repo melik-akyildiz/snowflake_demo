@@ -53,6 +53,11 @@ models:
       core:
         materialized: table
 
+    python:
+      materialized: table
+      python_adapter:
+        type: fal
+
   snowflake_spend:
     enabled: true
 
