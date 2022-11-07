@@ -186,17 +186,12 @@ models:
         description: '{{ doc("net_item_sales_amount") }}'
 
   - name: my_python_model
-    # Document within the same codebase
     description: My transformation written in Python
-    # Configure in ways that feel intuitive and familiar
-    config:
-        materialized: view
-
     columns:
       - name: customer_key
-
+        description: customer key
       - name: order_key
-        description: primary key of the model
+        description: order key
 
 
 metrics:
