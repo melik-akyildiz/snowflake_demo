@@ -1,6 +1,8 @@
 def model(dbt, session):
-    dbt.config.set(materialized="table")
-    df = dbt.ref("dim_customers")
-    df["customer_key"] = 1
+    target_name = dbt.config.get("target_name")
+    specific_var = dbt.config.get("specific_var")
+    specific_env_var = dbt.config.get("specific_env_var")
 
-    return df
+    orders_df = dbt.ref("fct_orders")
+
+    return orders_df
