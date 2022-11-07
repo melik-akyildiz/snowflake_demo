@@ -190,7 +190,7 @@ models:
     description: My transformation written in Python
     # Configure in ways that feel intuitive and familiar
     config:
-        materialized: table
+        materialized: view
 
     columns:
       - name: customer_key
