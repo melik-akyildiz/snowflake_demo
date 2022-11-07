@@ -1,8 +1,7 @@
 def model(dbt, session):
-    dbt.config(
-        materialized = "table"
-    )
+    df = dbt.ref("fct_orders")
+    target_df =dbt.this()
 
-    temps_df = dbt.ref("fct_orders")
+    target_df['order_key'] = df['order_key']
 
-    return temps_df
+    return target_df
