@@ -1,7 +1,6 @@
 def model(dbt, session):
+    dbt.config.set(materialized="table")
+    df = dbt.ref("dim_customers")
+    df["customer_key"] = 1
 
-    my_sql_model_df = dbt.ref("dim_customers")
-
-   # final_df =   # stuff you can't write in SQL!
-
-    return my_sql_model_df
+    return df
