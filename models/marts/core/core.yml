@@ -180,13 +180,13 @@ models:
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
 
-  - name: my_python_model
+  - name: PYTHON_MODEL_TABLE
     description: My transformation written in Python
     columns:
       - name: customer_key
         description: customer key
-      - name: order_key
-        description: order key
+      - name: NAME
+        description: name of the customer
 
 
 metrics:
