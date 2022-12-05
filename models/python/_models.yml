@@ -1,17 +1,12 @@
 version: 2
 
 models:
-  - name: my_python_model
+  - name: python_model_table
     description: My transformation written in Python
     columns:
       - name: customer_key
         description: customer key
-      - name: order_key
-        description: order key
+      - name: name
+        description: name of the customer
 
-  - name: transactions
-    columns:
-      - name: parsed_transaction_time
-        tests:
-          - not_null
 
