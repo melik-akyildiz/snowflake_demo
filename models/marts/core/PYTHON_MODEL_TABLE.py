@@ -4,6 +4,6 @@ def model(dbt, session):
         transient=false
     )
 
-    temps_df = dbt.ref("fct_orders")
+    temps_df = dbt.ref("PYTHON_MODEL_TABLE")
 
     return temps_df
