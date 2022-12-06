@@ -1,13 +1,4 @@
-{{
-    config(
-        materialized = 'table'
-    )
-}}
-with part as (
-
-    select * from {{ref('dim_customers')}}
-
-)select
+select
      *
  from
      PYTHON_MODEL_TABLE
