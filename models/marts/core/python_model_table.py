@@ -4,6 +4,6 @@ def model(dbt, session):
         transient=false
     )
 
-    temps_df = dbt.ref("dim_customers")
+    temps_df = dbt.ref('dim_customers')
 
     return temps_df
