@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: python_model_table
+  - name: python_model_view
     description: My transformation written in Python
     columns:
       - name: customer_key
