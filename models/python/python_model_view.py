@@ -15,4 +15,9 @@ def model(dbt,session):
            # your final 'select' statement
            df = sample_command.select("*")
 
-return df[1]
+            df = df.filter(df.updated_at >= session.sql(max_from_this).collect()[0][0])
+
+                   # or only rows from the past 3 days
+                   df = df.filter(df.updated_at >= F.dateadd("day", F.lit(-3), F.current_timestamp()))
+
+return df
