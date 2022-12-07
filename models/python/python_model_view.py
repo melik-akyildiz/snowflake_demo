@@ -17,4 +17,4 @@ def model(dbt,session):
 
         target_df['o_orderkey'] = df['o_orderkey']
 
-return target_df
+return target_df.dataframes[0]
