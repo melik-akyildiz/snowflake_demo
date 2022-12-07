@@ -1,7 +1,7 @@
 def model(dbt, session):
 
                # these are DAG-aware, and return dataframes
-               dim_all_learners = dbt.ref("dim_customer")
+               dim_all_learners = dbt.ref("python_model_table")
                source_users = dbt.source("tpch", "customer")
 
                sample_command = dim_all_learners.limit(1)

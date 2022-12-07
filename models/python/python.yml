@@ -4,15 +4,10 @@ models:
   - name: python_model_view
     description: written in Python
     columns:
-      - name: c_custkey
-        description: unique customer key
-        tests:
-          - unique:
-              severity: warn
-          - not_null:
-              severity: warn
-      - name: c_name
-        description: customer id
+      - name: customer_key
+        description: customer key
+      - name: name
+        description: name of the customer
 
   - name: node_sample
     description: This is some sample
