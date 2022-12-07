@@ -1,7 +1,16 @@
 def model(dbt, session):
-    df = dbt.ref('python_model_table')
-    target_df =dbt.this()
 
-    target_df['customer_key'] = df['customer_key']
+               # these are DAG-aware, and return dataframes
+               dim_all_learners = dbt.ref("orders")
+               source_users = dbt.source("tpch", "customer")
 
-    return target_df
+               sample_command = dim_all_learners.limit(1)
+                                  # .filter(col("o_orderkey"=="1"))
+
+
+               # your final 'select' statement
+               df = sample_command.select("*")
+
+               t
+
+               return df
