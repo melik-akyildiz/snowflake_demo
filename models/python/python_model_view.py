@@ -15,6 +15,6 @@ def model(dbt,session):
            # your final 'select' statement
            df = sample_command.select("*")
 
-           target_df['o_orderkey'] = df['o_orderkey']
+           target_df['o_orderkey'] = dim_all_learners['o_orderkey']
 
 return target_df
