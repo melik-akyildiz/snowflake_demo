@@ -13,7 +13,7 @@ def model(dbt, session):
 
 
            # your final 'select' statement
-           df = dim_all_learners.select("*")
+           #df = dim_all_learners.select("*")
 
            target_df['o_orderkey'] = dim_all_learners['o_orderkey']
 
