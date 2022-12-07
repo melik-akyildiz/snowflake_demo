@@ -15,4 +15,4 @@ def model(dbt,session):
            # your final 'select' statement
            df = sample_command.select("*")
 
-return df['o_orderkey']
+return df
