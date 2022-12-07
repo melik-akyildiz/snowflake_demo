@@ -1,4 +1,4 @@
-def model(dbt):
+def model(dbt,session):
 
         dbt.config(
             materialized='table'
