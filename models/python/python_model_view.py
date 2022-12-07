@@ -11,6 +11,5 @@ def model(dbt, session):
                # your final 'select' statement
                df = sample_command.select("*")
 
-               t
 
                return df
