@@ -4,8 +4,8 @@
         config(
           target_schema='PUBLIC',
           strategy='check',
-          unique_key='ORDERKEY',
-          check_cols=['ORDERSTATUS'],
+          unique_key='O_ORDERKEY',
+          check_cols=['O_ORDERSTATUS'],
         )
     }}
 
