@@ -5,7 +5,7 @@
           target_schema='PUBLIC',
           strategy='check',
           unique_key='O_ORDERKEY',
-          check_cols=['O_ORDERSTATUS',all],
+          check_cols=['O_ORDERSTATUS'],
         )
     }}
 
