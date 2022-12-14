@@ -4,7 +4,7 @@
         config(
           target_schema='PUBLIC',
           strategy='check',
-          unique_key='order_key',
+          unique_key='id',
           check_cols=['status_code'],
         )
     }}
