@@ -2,6 +2,9 @@ version: 2
 
 snapshots:
   - name: check_example
+    description: snapshots example
+
+  - name: check_example_no_sql
     config:
       target_schema: PUBLIC
       target_database: PC_DBT_DB
