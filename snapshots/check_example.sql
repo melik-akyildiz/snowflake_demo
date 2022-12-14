@@ -9,6 +9,6 @@
         )
     }}
 
-select * from {{ source('tpch', 'fct_order_items') }}
+select * from {{ source('tpch', 'orders') }}
 
     {% endsnapshot %}
