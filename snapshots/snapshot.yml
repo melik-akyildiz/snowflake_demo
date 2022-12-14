@@ -5,10 +5,4 @@ snapshots:
     description: snapshots example
 
   - name: check_example_no_sql
-    config:
-      target_schema: PUBLIC
-      target_database: PC_DBT_DB
-      unique_key: O_ORDERKEY
-      strategy: timestamp | check
-      updated_at: O_ORDERDATE
-      check_cols: O_ORDERSTATUS | all
+    description: snapshots example 2
