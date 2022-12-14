@@ -1,7 +1,7 @@
 version: 2
 
 snapshots:
-  - name: fct_order_items
+  - name: check_example
     config:
       target_schema: PUBLIC
       target_database: PC_DBT_DB

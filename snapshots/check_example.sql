@@ -2,13 +2,13 @@
 
     {{
         config(
-          target_schema='snapshots',
+          target_schema='PUBLIC',
           strategy='check',
-          unique_key='id',
-          check_cols=['status', 'is_cancelled'],
+          unique_key='order_item_key',
+          check_cols=['order_item_status_code'],
         )
     }}
 
-select * from {{ source('jaffle_shop', 'orders') }}
+select * from {{ source('tpch', 'fct_order_items') }}
 
     {% endsnapshot %}
