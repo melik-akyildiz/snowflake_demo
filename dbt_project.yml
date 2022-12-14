@@ -56,6 +56,8 @@ models:
     python:
       materialized: table
 
+  snowflake_spend:
+    enabled: true
 
 seeds:
   tpch:
