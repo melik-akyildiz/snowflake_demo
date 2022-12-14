@@ -8,7 +8,7 @@ snapshots:
     config:
       target_schema: PUBLIC
       target_database: PC_DBT_DB
-      unique_key: order_item_key
+      unique_key: O_ORDERKEY
       strategy: timestamp | check
-      updated_at: order_date
-      check_cols: order_item_status_code | all
+      updated_at: O_ORDERDATE
+      check_cols: O_ORDERSTATUS | all
